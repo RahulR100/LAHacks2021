@@ -7,7 +7,7 @@ CORE_KEY = settings.CORE_KEY
 
 def get_queries(query, page_limit, params):
 	endpoint = "https://core.ac.uk:443/api-v2/articles/search/"
-	params['apiKey'] = COREKEY
+	params['apiKey'] = CORE_KEY
 	
 	real_query = '(title:('+query+') OR description:('+query+') OR fullText:('+query+')) AND description:*'
 	# language.name:English doesnt work

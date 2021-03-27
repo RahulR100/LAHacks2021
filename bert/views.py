@@ -10,7 +10,6 @@ def view_raw_results(request, *args, **kwargs):
 	pages = 2
 	
 	params = {
-   		'apiKey':'neHjg153Yp6UPxMulymbAs7f4QdzrtIJ',
 		'page':1,
    		'pageSize':articles_per_page,
    		'metadata':'true',
@@ -34,7 +33,7 @@ def view_raw_results(request, *args, **kwargs):
 	links = []
 
 	graph = {"nodes":nodes, "links":links}
-	graph_json = json.dumps(graph) #### data for the 3d-visual
+	graph_json = json.dumps(graph)  #### data for the 3d-visual
 
 	""" with open("graph.json", 'w+') as file:
 		file.write(graph_json) """
