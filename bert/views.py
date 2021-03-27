@@ -1,7 +1,8 @@
 from django.shortcuts import render
-import article_query
-import article_to_point
+from .article_query import get_queries
+from .article_to_point import Articles2Points, Data2Articles
 import json
+
 # Create your views here.
 
 def view_raw_results(request, *args, **kwargs):
@@ -20,9 +21,9 @@ def view_raw_results(request, *args, **kwargs):
    		'urls':'true',
    		'faithfulMetadata':'false',
 	}
-	results = article_query.get_queries(query, pages, params)
-	a2p = article_to_point.Articles2Points()
-	articles = article_to_point.Data2Articles(results)
+	results = get_queries(query, pages, params)
+	a2p = Articles2Points()
+	articles = Data2Articles(results)
 
 	context = {
 		"points": a2p(articles)
